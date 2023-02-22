@@ -1,3 +1,3 @@
-# Clash Verge Service
+# Hiddify Desktop Service
 
 A Windows Service.
