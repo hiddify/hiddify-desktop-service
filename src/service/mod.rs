@@ -18,7 +18,7 @@ use windows_service::{
     service_dispatcher, Result,
 };
 
-const SERVICE_NAME: &str = "clash_verge_service";
+const SERVICE_NAME: &str = "hiddify_desktop_service";
 const SERVICE_TYPE: ServiceType = ServiceType::OWN_PROCESS;
 const LISTEN_PORT: u16 = 33211;
 

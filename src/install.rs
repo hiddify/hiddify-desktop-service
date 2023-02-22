@@ -19,7 +19,7 @@ fn main() -> windows_service::Result<()> {
     let service_manager = ServiceManager::local_computer(None::<&str>, manager_access)?;
 
     let service_access = ServiceAccess::QUERY_STATUS | ServiceAccess::START;
-    if let Ok(service) = service_manager.open_service("clash_verge_service", service_access) {
+    if let Ok(service) = service_manager.open_service("hiddify_desktop_service", service_access) {
         if let Ok(status) = service.query_status() {
             match status.current_state {
                 ServiceState::StopPending
@@ -37,16 +37,16 @@ fn main() -> windows_service::Result<()> {
 
     let service_binary_path = std::env::current_exe()
         .unwrap()
-        .with_file_name("clash-verge-service.exe");
+        .with_file_name("hiddify-desktop-service.exe");
 
     if !service_binary_path.exists() {
-        eprintln!("clash-verge-service.exe not found");
+        eprintln!("hiddify-desktop-service.exe not found");
         std::process::exit(2);
     }
 
     let service_info = ServiceInfo {
-        name: OsString::from("clash_verge_service"),
-        display_name: OsString::from("Clash Verge Service"),
+        name: OsString::from("hiddify_desktop_service"),
+        display_name: OsString::from("Hiddify Desktop Service"),
         service_type: ServiceType::OWN_PROCESS,
         start_type: ServiceStartType::AutoStart,
         error_control: ServiceErrorControl::Normal,
@@ -60,7 +60,7 @@ fn main() -> windows_service::Result<()> {
     let start_access = ServiceAccess::CHANGE_CONFIG | ServiceAccess::START;
     let service = service_manager.create_service(&service_info, start_access)?;
 
-    service.set_description("Clash Verge Service helps to launch clash core")?;
+    service.set_description("Hiddify Desktop Service helps to launch clash core")?;
     service.start(&Vec::<&OsStr>::new())?;
 
     Ok(())
