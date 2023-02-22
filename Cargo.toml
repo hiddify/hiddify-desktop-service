@@ -1,13 +1,13 @@
 [package]
-name = "clash-verge-service"
+name = "hiddify-desktop-service"
 version = "0.1.0"
 edition = "2021"
 authors = ["zzzgydi"]
 license = "GPL-3.0"
-repository = "https://github.com/zzzgydi/clash-verge-service.git"
+repository = "https://github.com/hiddify/hiddify-desktop-service.git"
 
 [[bin]]
-name = "clash-verge-service"
+name = "hiddify-desktop-service"
 path = "src/main.rs"
 
 [[bin]]
