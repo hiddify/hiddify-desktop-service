@@ -1,3 +1,3 @@
 # Hiddify Desktop Service
 
-A Windows Service.
+Hiddify Desktop Windows Service.
